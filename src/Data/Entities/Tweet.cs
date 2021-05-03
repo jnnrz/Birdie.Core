@@ -26,9 +26,10 @@ namespace Birdie.Core.Data.Entities
 
     public class TweetValidator : AbstractValidator<Tweet>
     {
-        public TweetValidator()
+        public TweetValidator(IValidator<Url> urlValidator)
         {
             RuleFor(t => t.Body).MaximumLength(300).NotNull();
+            RuleForEach(t => t.Urls).SetValidator(urlValidator);
         }
     }
 }

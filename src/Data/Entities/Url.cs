@@ -1,4 +1,8 @@
-﻿using System.Text.Json.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
+using FluentValidation;
 
 namespace Birdie.Core.Data.Entities
 {
@@ -14,5 +18,15 @@ namespace Birdie.Core.Data.Entities
         public long TweetId { get; set; }
         [JsonIgnore]
         public Tweet Tweet { get; set; }
+    }
+
+    public class UrlValidator : AbstractValidator<Url>
+    {
+        public UrlValidator()
+        {
+            RuleFor(u => u.ExpandedUrl)
+                .Must((url) => Uri.TryCreate(url, UriKind.Absolute, out _))
+                .WithMessage("URI is not valid.");
+        }
     }
 }
