@@ -14,7 +14,7 @@ namespace Birdie.Core.Data.Entities
     {
         public SavedSearchValidator()
         {
-            RuleFor(ss => ss.Search).MaximumLength(100).NotEmpty();
+            RuleFor(ss => ss.Search).MaximumLength(40).NotEmpty();
         }
     }
 }

@@ -63,6 +63,11 @@ namespace Birdie.Core.Data
             {
                 b.Property(h => h.Title).HasMaxLength(40).IsRequired(true);
             });
+
+            builder.Entity<SavedSearch>(b =>
+            {
+                b.Property(ss => ss.Search).HasMaxLength(40).IsRequired(true);
+            });
         }
 
         public DbSet<User> Users { get; set; }
