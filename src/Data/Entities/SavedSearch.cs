@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using FluentValidation;
 
 namespace Birdie.Core.Data.Entities
 {
@@ -9,5 +10,13 @@ namespace Birdie.Core.Data.Entities
         public string Search { get; set; }
         public long UserId { get; set; }
         public User User { get; set; }
+    }
+
+    public class SavedSearchValidator : AbstractValidator<SavedSearch>
+    {
+        public SavedSearchValidator()
+        {
+            RuleFor(ss => ss.Search).MaximumLength(100).NotEmpty();
+        }
     }
 }
