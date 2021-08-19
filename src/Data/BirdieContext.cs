@@ -37,7 +37,7 @@ namespace Birdie.Core.Data
                     .HasMaxLength(250)
                     .HasDefaultValue("default_profile_pic.jpg")
                     .IsRequired();
-                
+
                 b.Property(u => u.ProfileBannerUrl)
                     .HasMaxLength(250)
                     .HasDefaultValue("default_banner_pic.jpg")
@@ -71,5 +71,6 @@ namespace Birdie.Core.Data
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Retweet> Retweets { get; set; }
         public DbSet<Url> Urls { get; set; }
+        public DbSet<SavedSearch> SavedSearches { get; set; }
     }
 }
