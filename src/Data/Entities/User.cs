@@ -16,14 +16,14 @@ namespace Birdie.Core.Data.Entities
         public bool IsVerified { get; set; }
         public bool IsProtected { get; set; }
         public bool Following { get; set; }
-        public bool WantRetweet { get; set; }
+        public bool? WantRetweet { get; set; }
         public bool CanDm { get; set; }
-        public bool CanMediaTag { get; set; }
+        public bool? CanMediaTag { get; set; }
         public long PinnedStatusId { get; set; }
         public string ProfileImageUrl { get; set; }
         public string ProfileBannerUrl { get; set; }
         public string Email { get; set; }
-        
+
         public Country Country { get; set; }
         public UserStatistics Statistics { get; set; }
         public ICollection<Tweet> Tweets { get; set; }
