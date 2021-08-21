@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using FluentValidation;
 
 namespace Birdie.Core.Data.Entities
@@ -7,6 +8,7 @@ namespace Birdie.Core.Data.Entities
         public long Id { get; set; }
         public string Search { get; set; }
         public long UserId { get; set; }
+        [JsonIgnore]
         public User User { get; set; }
     }
 
