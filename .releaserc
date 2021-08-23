@@ -1,0 +1,15 @@
+{
+    "branches": [
+        "main"
+    ],
+    "ci": false,
+    "dryRun": false,
+    "plugins": [
+        "@semantic-release/commit-analyzer",
+        "@semantic-release/release-notes-generator",
+        "@semantic-release/git",
+        "@semantic-release/github"
+    ],
+    "repositoryUrl": "https://github.com/jnnrz/Birdie.Core",
+    "tagFormat": "${version}"
+}
