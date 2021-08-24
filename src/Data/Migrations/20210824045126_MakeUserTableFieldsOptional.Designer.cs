@@ -3,15 +3,17 @@ using System;
 using Birdie.Core.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Birdie.Core.Data.Migrations
 {
     [DbContext(typeof(BirdieContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210824045126_MakeUserTableFieldsOptional")]
+    partial class MakeUserTableFieldsOptional
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
