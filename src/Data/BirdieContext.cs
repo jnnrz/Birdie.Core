@@ -59,6 +59,10 @@ namespace Birdie.Core.Data
                 b.Property(t => t.CreatedAt).HasDefaultValueSql("now()");
             });
 
+            builder.Entity<Tweet>()
+                .HasIndex(t => t.SearchVector)
+                .HasMethod("GIN");
+
             builder.Entity<Hashtag>(b =>
             {
                 b.Property(h => h.Title).HasMaxLength(40).IsRequired(true);
