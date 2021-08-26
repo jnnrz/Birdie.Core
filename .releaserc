@@ -3,11 +3,31 @@
         "main"
     ],
     "ci": false,
-    "dryRun": false,
     "plugins": [
-        "@semantic-release/commit-analyzer",
-        "@semantic-release/release-notes-generator",
-        "@semantic-release/git",
+        [
+            "@semantic-release/commit-analyzer",
+            {
+                "preset": "conventionalcommits"
+            }
+        ],
+        [
+            "@semantic-release/release-notes-generator",
+            {
+                "preset": "conventionalcommits",
+            }
+        ],
+        [
+            "@semantic-release/changelog",
+            {
+                "changelogFile": "docs/CHANGELOG.md"
+            }
+        ],
+        [
+            "@semantic-release/git",
+            {
+                "assets": ["docs/CHANGELOG.md"]
+            }
+        ],
         "@semantic-release/github"
     ],
     "repositoryUrl": "https://github.com/jnnrz/Birdie.Core",
