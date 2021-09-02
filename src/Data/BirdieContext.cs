@@ -75,11 +75,17 @@ namespace Birdie.Core.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<UserStatistics> UserStats { get; set; }
         public DbSet<Tweet> Tweets { get; set; }
         public DbSet<TweetStats> TweetStats { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Retweet> Retweets { get; set; }
+        public DbSet<Mention> Mentions { get; set; }
         public DbSet<Url> Urls { get; set; }
+        public DbSet<Hashtag> Hashtags { get; set; }
         public DbSet<SavedSearch> SavedSearches { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Media> Mediae { get; set; }
+        
     }
 }
