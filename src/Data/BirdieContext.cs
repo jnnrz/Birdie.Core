@@ -85,7 +85,7 @@ namespace Birdie.Core.Data
         public DbSet<Hashtag> Hashtags { get; set; }
         public DbSet<SavedSearch> SavedSearches { get; set; }
         public DbSet<Country> Countries { get; set; }
-        public DbSet<Media> Mediae { get; set; }
+        public DbSet<Media> Media { get; set; }
         
     }
 }
